@@ -8,16 +8,16 @@ const cardImages = [
   { src: "/img/3.png", matched: false },
   { src: "/img/4.png", matched: false },
   { src: "/img/5.png", matched: false },
-  // { src: "/img/6.png", matched: false },
-  // { src: "/img/7.png", matched: false },
-  // { src: "/img/8.png", matched: false },
-  // { src: "/img/9.png", matched: false },
-  // { src: "/img/10.png", matched: false },
-  { src: "/img/11.png", matched: false },
-  { src: "/img/12.png", matched: false },
-  { src: "/img/13.png", matched: false },
-  { src: "/img/14.png", matched: false },
-  { src: "/img/15.png", matched: false },
+  { src: "/img/6.png", matched: false },
+  { src: "/img/7.png", matched: false },
+  { src: "/img/8.png", matched: false },
+  { src: "/img/9.png", matched: false },
+  { src: "/img/10.png", matched: false },
+  // { src: "/img/11.png", matched: false },
+  // { src: "/img/12.png", matched: false },
+  // { src: "/img/13.png", matched: false },
+  // { src: "/img/14.png", matched: false },
+  // { src: "/img/15.png", matched: false },
   // { src: "/img/16.png", matched: false },
   // { src: "/img/17.png", matched: false },
   // { src: "/img/18.png", matched: false },
@@ -68,6 +68,8 @@ function App() {
       .sort(() => Math.random() - 0.5)
       .map((card) => ({ ...card, id: Math.random() }));
 
+    setChoiceOne(null);
+    setChoiceTwo(null);
     setCards(shuffledCards);
     setTurns(0);
   };
@@ -106,10 +108,17 @@ function App() {
     setDisabled(false);
   };
 
+  // start a new game automatically
+  useEffect(() => {
+    shuffleCards();
+  }, []);
+
   return (
     <div className="App">
       <h1>Magik Match</h1>
-      <button onClick={shuffleCards}>New Game</button>
+      <button className="glow-on-hover" onClick={shuffleCards}>
+        New Game
+      </button>
       <div className="card-grid">
         {cards.map((card) => (
           <SingleCard
@@ -121,6 +130,7 @@ function App() {
           />
         ))}
       </div>
+      <p className="turns">Turns: {turns}</p>
     </div>
   );
 }

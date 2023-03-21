@@ -1,19 +1,22 @@
 @font-face {
   font-family: Magic;
-  font-weight: normal;
   src: url(Magician.ttf);
 }
 
 /* base styles */
 body {
   font-family: Magic;
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
   background-color: #1b1523;
   color: #fff;
 }
 
 .App h1{
+  margin-top: 10px;
+  font-size: 4em;
+  margin-bottom: 10px;
+  font-weight: normal;
   animation: color-change 2s infinite;
 }
 
