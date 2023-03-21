@@ -1,0 +1,36 @@
+@font-face {
+  font-family: Magic;
+  font-weight: normal;
+  src: url(Magician.ttf);
+}
+
+/* base styles */
+body {
+  font-family: Magic;
+  font-size: 4em;
+  text-align: center;
+  background-color: #1b1523;
+  color: #fff;
+}
+
+.App h1{
+  animation: color-change 2s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: purple;
+    }
+    50% {
+      color: pink;
+    }
+    100% {
+      color: purple;
+    }
+    50%{
+      color: pink;
+    }
+    0%{
+      color: purple;
+    }
+  }
